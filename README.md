@@ -38,7 +38,6 @@ pip install eco-ana
      ```
      <br />
      Table of parameters to `eqpcomo()` function:  
-
      | Parameter     | Description                                                                        |
      | ------------- | ---------------------------------------------------------------------------------- |
      | model         | Cost estimation model (`Turton`, `Seider`, `Smith`, `Towler`, `Peters`, `Guthrie`) |
