@@ -10,9 +10,8 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
 
 **MODULES**
 ---
-1. ecoana.eqpcomo
-   - Usage  
-     **eqpcomo** is a Python module for chemical process equipment cost estimation.
+1. `ecoana.eqpcomo`
+     `eqpcomo` is a Python module for chemical process equipment cost estimation.
      This module provides a unified interface to estimate equipment purchase costs using several well-known correlations from chemical engineering literature.
      Each model contains equipment-specific correlations, capacity ranges, and material factors based on the original literature sources.  
        
@@ -23,23 +22,9 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      > *Peters model*: Max. S. Peters (2003), “Plant Design and Economics for Chemical Engineers” (5th ed.)  
      > *Towler model*: Gavin Towler (2007), “Chemical Engineering Design –Principles, Practice and Economics of plant” (1st ed.)  
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
-     
-     | Parameter     | Description                                                                        |
-| ------------- | ---------------------------------------------------------------------------------- |
-| model         | Cost estimation model (`Turton`, `Seider`, `Smith`, `Towler`, `Peters`, `Guthrie`) |
-| equipment     | Equipment category                                                                 |
-| eqptype       | Equipment subtype                                                                  |
-| material      | Construction material                                                              |
-| T_K           | Operating temperature (K)                                                          |
-| P_bar         | Operating pressure (bar)                                                           |
-| vol_cum       | Volume (m³)                                                                        |
-| area_sqm      | Heat transfer area (m²)                                                            |
-| power_kW      | Equipment power (kW)                                                               |
-| massflow_kgph | Mass flow rate (kg/h)                                                              |
-| volflow_cumph | Volumetric flow rate (m³/h)                                                        |
-| diameter_m    | Diameter (m)                                                                       |
-| height_m      | Height (m)                                                                         |
-| thickness_m   | Wall thickness (m)                                                                 |
+
+
+
 
    - Function structures
 
