@@ -37,7 +37,8 @@ pip install eco-ana
      eqpcomo(model="model name", equipment="equipment name", eqptype="equipment type name", par_1=par_1_value, par_2=par_2_value,...)
      ```
      <br />
-     Table of parameters to `eqpcomo()` function:  
+     Table of parameters to `eqpcomo()` function:
+     
      | Parameter     | Description                                                                        |
      | ------------- | ---------------------------------------------------------------------------------- |
      | model         | Cost estimation model (`Turton`, `Seider`, `Smith`, `Towler`, `Peters`, `Guthrie`) |
@@ -110,7 +111,11 @@ pip install eco-ana
      Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
      ```
      <br />
-- Error Messages   <br />
+- Automatic Parameter Estimation  <br />
+The eqpcomo() function can automatically estimate some parameters when they are not explicitly provided, as long as enough related information is available.
+     Some parameters can be automatically estimated if not provided.
+
+
 
 **AUTHOR**
 ---
