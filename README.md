@@ -23,11 +23,12 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      > *Towler model*: Gavin Towler (2007), “Chemical Engineering Design –Principles, Practice and Economics of plant” (1st ed.)  
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
 
-
-
-
    - Function structures
 
+**AUTHOR**
+---
+Haeun Choi  
+E-mail: nolaaa@o.cnu.ac.kr
 
 **ACKNOWLEDGEMENT**
 ---
