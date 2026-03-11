@@ -31,14 +31,15 @@ pip install eco-ana
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
  <br />
  
-   - Function Interface  
+   - Function Interface    <br />
      Main features:
      ```
      eqpcomo(model="model name", equipment="equipment name", eqptype="equipment type name", par_1=par_1_value, par_2=par_2_value,...)
      ```
      <br />
      Table of parameters to `eqpcomo` function:   <br />
-         <br />
+  <br />
+   
      | Parameter     | Description                                                                        |
      | ------------- | ---------------------------------------------------------------------------------- |
      | model         | Cost estimation model (`Turton`, `Seider`, `Smith`, `Towler`, `Peters`, `Guthrie`) |
@@ -57,7 +58,7 @@ pip install eco-ana
      | thickness_m   | Wall thickness (m)                                                                 |
         <br />
         
- - Basic Usage
+ - Basic Usage  <br />
      Example: estimating the cost of a centrifugal compressor using the Smith model
      ```
      from ecoana import eqpcomo
