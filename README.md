@@ -112,8 +112,13 @@ pip install eco-ana
      ```
      <br />
 - Automatic Parameter Estimation  <br />
-The eqpcomo() function can automatically estimate some parameters when they are not explicitly provided, as long as enough related information is available.
-     Some parameters can be automatically estimated if not provided.
+The `eqpcomo()` can automatically estimate some parameters when they are not explicitly provided, as long as enough related equipment data is available.<br />
+
+| Estimated parameter | Description           | Required input parameters for estimation     | Applied condition                                                  |
+| ------------------- | --------------------- | -------------------------------------------- | ------------------------------------------------------------------ |
+| `vol_cum`           | Vessel volume         | `diameter_m`, `height_m`                     | When `equipment="Vessel/Tower"` and `vol_cum` is not provided      |
+| `thickness_m`       | Vessel wall thickness | `diameter_m`, `P_bar`, `T_K`, `material`     | When `equipment="Vessel/Tower"` and `thickness_m` is not provided  |
+| `pumphead_m`        | Pump head             | `power_kW`, `volflow_cumph`, `massflow_kgph` | Available through helper logic when pump head needs to be inferred |
 
 
 
