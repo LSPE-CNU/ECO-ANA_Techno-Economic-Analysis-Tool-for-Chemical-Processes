@@ -10,10 +10,10 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
 
 **MODULES**
 ---
-1. ecoana.eqpcomo
-   - Usage  
+**1. ecoana.eqpcomo**
+   **- Usage**  
      **eqpcomo** is a Python module for chemical process equipment cost estimation.
-     This module provides a unified interface to estimate equipment purchase costs using several well-known correlations from chemical engineering literature.  
+     This module provides a unified interface to estimate equipment purchase costs using several well-known correlations from chemical engineering literature.
      The library currently implements models from:  
      > Richard A. Turton (2018), “Analysis, Synthesis, and Design of Chemical processes” (5th ed.)  
      > Warren D. Seider (2016), “Product and Process Design Principles: Synthesis, Analysis and Evaluation” (4th ed.)  
