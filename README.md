@@ -13,10 +13,9 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
 1. `ecoana.eqpcomo`  
      `eqpcomo` is a Python module for chemical process equipment cost estimation.
      This module provides a unified interface to estimate equipment purchase costs using several well-known correlations from chemical engineering literature.
-     Each model contains equipment-specific correlations, capacity ranges, and material factors based on the original literature sources.
-     And each model has its own valid equipment types and parameter requirements.
+     Each model contains equipment-specific correlations, capacity ranges, and material factors based on the original literature sources.  
        
-     The library currently implements models from:  
+     The library currently implements equipment cost estimation models from:  
      > *Turton model*: Richard A. Turton (2018), “Analysis, Synthesis, and Design of Chemical processes” (5th ed.)  
      > *Seider model*: Warren D. Seider (2016), “Product and Process Design Principles: Synthesis, Analysis and Evaluation” (4th ed.)  
      > *Smith model*: Robin Smith (2016), “Chemical Process Design and Integration” (2nd ed.)  
@@ -24,7 +23,26 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      > *Towler model*: Gavin Towler (2007), “Chemical Engineering Design –Principles, Practice and Economics of plant” (1st ed.)  
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
 
-   - Function structures
+   - Function Interface
+     Main function:
+     
+   - Basic Usage  
+     Example: estimating the cost of a *centrifugal compressor* using the Turton model
+     ```
+     from eqpcomo import eqpcomo
+     
+     cost = eqpcomo(
+         model="Turton",
+         equipment="Pumps",
+         eqptype="Centrifugal",
+         material="Carbon steel",
+         power_kW=50,
+         P_bar=5
+     )
+     
+     print(cost)
+     
+     ```
 
 **AUTHOR**
 ---
