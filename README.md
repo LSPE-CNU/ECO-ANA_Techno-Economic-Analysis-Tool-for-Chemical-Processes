@@ -108,7 +108,7 @@ pip install eco-ana
      ```
      Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
      ```
-<br />
+
        
 
 **AUTHOR**
