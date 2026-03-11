@@ -14,13 +14,14 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
    - Usage  
      **eqpcomo** is a Python module for chemical process equipment cost estimation.
      This module provides a unified interface to estimate equipment purchase costs using several well-known correlations from chemical engineering literature.
+       
      The library currently implements models from:  
      > *Turton model*: Richard A. Turton (2018), “Analysis, Synthesis, and Design of Chemical processes” (5th ed.)  
-     > *Seider model*:Warren D. Seider (2016), “Product and Process Design Principles: Synthesis, Analysis and Evaluation” (4th ed.)  
-     > *Smith model*:Robin Smith (2016), “Chemical Process Design and Integration” (2nd ed.)  
-     > *Peters model*:Max. S. Peters (2003), “Plant Design and Economics for Chemical Engineers” (5th ed.)  
-     > *Towler model*:Gavin Towler (2007), “Chemical Engineering Design –Principles, Practice and Economics of plant” (1st ed.)  
-     > *Guthrie model*:L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)  
+     > *Seider model*: Warren D. Seider (2016), “Product and Process Design Principles: Synthesis, Analysis and Evaluation” (4th ed.)  
+     > *Smith model*: Robin Smith (2016), “Chemical Process Design and Integration” (2nd ed.)  
+     > *Peters model*: Max. S. Peters (2003), “Plant Design and Economics for Chemical Engineers” (5th ed.)  
+     > *Towler model*: Gavin Towler (2007), “Chemical Engineering Design –Principles, Practice and Economics of plant” (1st ed.)  
+     > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)  
      
    - Function structures
 
