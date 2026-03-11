@@ -11,8 +11,8 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
 **MODULES**
 ---
 * ecoana.eqpcomo
-- Usage
-- Function structures
+ - Usage
+ - Function structures
 
 
 **ACKNOWLEDGEMENT**
