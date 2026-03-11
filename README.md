@@ -58,7 +58,7 @@ pip install eco-ana
         <br />
         
  - Basic Usage  <br />
-     Example: estimating the cost of a centrifugal compressor using the Smith model
+     Example: Estimating the cost of a centrifugal compressor using the Smith model.
      ```
      from ecoana import eqpcomo
      
@@ -73,7 +73,7 @@ pip install eco-ana
      )
      print(cost)
      ```
-     Output: The `eqpcomo` returns a tuple containing two values:
+     Output: The `eqpcomo` returns a tuple containing two values.
      ```
      (212390.5, '2000 year basis')
      ```
