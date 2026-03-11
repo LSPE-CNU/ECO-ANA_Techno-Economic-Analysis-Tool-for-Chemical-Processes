@@ -79,7 +79,6 @@ pip install eco-ana
      ```
      Each equipment cost estimation models are based on correlations derived from price data for different years.  <br />
    Therefore, the function returns the basis year together with the cost estimate so that users can adjust the cost using an appropriate **Capital Cost Index (e.g., CEPCI)** if needed.  <br />
-
    - Error Messages   <br />
      The required parameters for function can be differ depending on selected cost estimation model or equipment type.   <br />    
      Therefore, the `eqpcomo` includes built-in input validation and guidance through error messages.  <br />
@@ -89,8 +88,8 @@ pip install eco-ana
      - whether the selected model or equipment type is unsupported  
      - the list of available options for the given model
       <br />
-     Example 1:
-     If the essential parameters required for cost estimation is not input into the function,  
+     Example 1: <br />
+     If the essential parameters required for cost estimation is not input into the function,   <br />
      ```
      eqpcomo(model="Turton", equipment="Vaporizer")
      ```  
@@ -98,8 +97,8 @@ pip install eco-ana
      Error: Missing required input variables for the selected model and equipment. Missing variables: ['eqptype', 'vol_cum', 'P_bar', 'material']
      ```  
      <br />
-     Example 2:  
-     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user.
+     Example 2:   <br />
+     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user. <br />
      ```
      eqpcomo(model="Turton", equipment="Membrane")
      ```  
@@ -107,7 +106,6 @@ pip install eco-ana
      Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
      ```  
       <br />
-  
      - Automatic Parameter Estimation
        Some parameters can be automatically estimated if not provided. These helper functions are implemented in the internal utility modules.
 
