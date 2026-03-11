@@ -37,7 +37,7 @@ pip install eco-ana
      eqpcomo(model="model name", equipment="equipment name", eqptype="equipment type name", par_1=par_1_value, par_2=par_2_value,...)
      ```
      <br />
-     Table of parameters to `eqpcomo()` function:   <br />
+     Table of parameters to `eqpcomo()` function:  
 
      | Parameter     | Description                                                                        |
      | ------------- | ---------------------------------------------------------------------------------- |
