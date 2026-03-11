@@ -2,14 +2,16 @@
 ---
 **SUMMARY**
 ---
-**ECO-ANA**(Process Economic-Analyzer) is designed to support early-stage techno-economic analysis (TEA) of chemical processes accounting for cost estimation model uncertainty. 
-This was developed by **LSPE**, the Laboratory for Sustainable Process Engineering from Chungnam national university.
+<img width="4816" height="1256" alt="Frame 21 (1)" src="https://github.com/user-attachments/assets/77e0bff4-2e80-4145-af1b-c8aa5db3affd" />
+
+**ECO-ANA**(Process **Eco**nomic-**Ana**lyzer) is designed to support early-stage techno-economic analysis (TEA) of chemical processes accounting for cost estimation model uncertainty.  
+This was developed by **LSPE**, the Laboratory for Sustainable Process Engineering from Chungnam national university.  
 LSPE@CNU: https://sites.google.com/view/rohgroup
 
 **MODULES**
 ---
-ecoana.eqpcomo
----
+* ecoana.eqpcomo
+
 
 
 
