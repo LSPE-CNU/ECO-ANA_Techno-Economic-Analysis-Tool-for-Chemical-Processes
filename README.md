@@ -1,6 +1,6 @@
 **[ECO-ANA: Techno-Economic Analysis Tool for Chemical Processes]**
 ---
-**#SUMMARY**
+**SUMMARY**
 ---
 <img width="4816" height="1256" alt="Frame 21 (1)" src="https://github.com/user-attachments/assets/49512815-1450-48d7-b29f-f2950aa8fdea" />
 
@@ -24,8 +24,37 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
 
    - Function Interface
-     The `eqpcomo` includes built-in input validation and guidance through error messages.
-     Because the required variables differ depending on:
+   - Input Validation and Error Messages
+     The required parameters for function can be differ depending on selected cost estimation model or equipment type.     
+     Therefore, the `eqpcomo` includes built-in input validation and guidance through error messages.
+       
+     If required parameters are missing or invalid, the function returns a error message indicating:
+     - which input parameter is missing  
+     - whether the selected model or equipment type is unsupported  
+     - the list of available options for the given model
+  
+     Example 1:
+     If the essential parameters required for cost estimation is not input into the function,  
+     ```
+     eqpcomo(model="Turton", equipment="Vaporizer")
+     ```  
+     ```
+     Error: Missing required input variables for the selected model and equipment. Missing variables: ['eqptype', 'vol_cum', 'P_bar', 'material']
+     ```  
+  
+     Example 2:  
+     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user.
+     ```
+     eqpcomo(model="Turton", equipment="Membrane")
+     ```  
+     ```
+     Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
+
+     ```  
+     
+  
+     
+
      
      Main function:
      The required parameters depend on the selected model and equipment type.
