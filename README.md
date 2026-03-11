@@ -57,7 +57,7 @@ pip install eco-ana
      | thickness_m   | Wall thickness (m)                                                                 |
         <br />
         
- - Basic Usage  <br />
+ - Basic Usage <br />
      Example: Estimating the cost of a centrifugal compressor using the Smith model.
      ```
      from ecoana import eqpcomo
@@ -79,7 +79,9 @@ pip install eco-ana
      ```
      Each equipment cost estimation models are based on correlations derived from price data for different years.  <br />
    Therefore, the function returns the basis year together with the cost estimate so that users can adjust the cost using an appropriate **Capital Cost Index (e.g., CEPCI)** if needed.  <br />
-   - Error Messages   <br />
+   <br />
+   
+ - Error Messages   <br />
      The required parameters for function can be differ depending on selected cost estimation model or equipment type.   <br />    
      Therefore, the `eqpcomo` includes built-in input validation and guidance through error messages.  <br />
        <br /> 
@@ -105,7 +107,7 @@ pip install eco-ana
      ```
      Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
      ```  
-      <br />
+      
      - Automatic Parameter Estimation
        Some parameters can be automatically estimated if not provided. These helper functions are implemented in the internal utility modules.
 
