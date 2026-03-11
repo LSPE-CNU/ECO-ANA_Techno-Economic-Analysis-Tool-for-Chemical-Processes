@@ -120,7 +120,7 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
 | `thickness_m`       | Vessel wall thickness | `diameter_m`, `P_bar`, `T_K`, `material`     | When `equipment="Vessel/Tower"` and `thickness_m` is not provided  |
 | `pumphead_m`        | Pump head             | `power_kW`, `volflow_cumph`, `massflow_kgph` | Available through helper logic when pump head needs to be inferred |
 
-
+<br />
 
 **AUTHOR**
 ---
