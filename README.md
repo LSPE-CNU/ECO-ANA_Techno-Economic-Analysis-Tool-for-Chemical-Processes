@@ -23,8 +23,7 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      > *Towler model*: Gavin Towler (2007), “Chemical Engineering Design –Principles, Practice and Economics of plant” (1st ed.)  
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
  <br />
-  <br />
-  
+ 
    - Function Interface  
      Main features:
      ```
@@ -49,7 +48,7 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      | diameter_m    | Diameter (m)                                                                       |
      | height_m      | Height (m)                                                                         |
      | thickness_m   | Wall thickness (m)                                                                 |
-       
+        <br />
      
    - Input Validation and Error Messages  
      The required parameters for function can be differ depending on selected cost estimation model or equipment type.     
