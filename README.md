@@ -79,7 +79,7 @@ pip install eco-ana
      ```
      Each equipment cost estimation models are based on correlations derived from price data for different years.  <br />
    Therefore, the function returns the basis year together with the cost estimate so that users can adjust the cost using an appropriate **Capital Cost Index (e.g., CEPCI)** if needed.  <br />
-       <br />
+
    - Error Messages   <br />
      The required parameters for function can be differ depending on selected cost estimation model or equipment type.   <br />    
      Therefore, the `eqpcomo` includes built-in input validation and guidance through error messages.  <br />
