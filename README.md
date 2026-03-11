@@ -1,6 +1,6 @@
 **[ECO-ANA: Techno-Economic Analysis Tool for Chemical Processes]**
 ---
-**SUMMARY**
+#**SUMMARY**
 ---
 <img width="4816" height="1256" alt="Frame 21 (1)" src="https://github.com/user-attachments/assets/49512815-1450-48d7-b29f-f2950aa8fdea" />
 
@@ -24,25 +24,37 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
 
    - Function Interface
+     The `eqpcomo` includes built-in input validation and guidance through error messages.
+     Because the required variables differ depending on:
+     
      Main function:
+     The required parameters depend on the selected model and equipment type.
+     
      
    - Basic Usage  
-     Example: estimating the cost of a *centrifugal compressor* using the Turton model
+     Example: estimating the cost of a centrifugal compressor using the Smith model
      ```
      from eqpcomo import eqpcomo
      
      cost = eqpcomo(
-         model="Turton",
-         equipment="Pumps",
-         eqptype="Centrifugal",
-         material="Carbon steel",
-         power_kW=50,
-         P_bar=5
+          model="Smith",
+          equipment="Compressor",
+          eqptype="Centrifugal",
+          T_K=400,
+          P_bar=10,
+          material='Carbon steel',
+          power_kW=1000
      )
      
      print(cost)
-     
-     ```
+     ```  
+     - Automatic Parameter Estimation
+       Some parameters can be automatically estimated if not provided. These helper functions are implemented in the internal utility modules.
+
+         - Vessel volume estimation from diameter and height
+         - Vessel wall thickness estimation from pressure and temperature
+         - Pump head estimation
+       
 
 **AUTHOR**
 ---
