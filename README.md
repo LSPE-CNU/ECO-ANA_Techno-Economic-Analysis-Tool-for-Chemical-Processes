@@ -1,6 +1,6 @@
 **[ECO-ANA: Techno-Economic Analysis Tool for Chemical Processes]**
 ---
-#**SUMMARY**
+**#SUMMARY**
 ---
 <img width="4816" height="1256" alt="Frame 21 (1)" src="https://github.com/user-attachments/assets/49512815-1450-48d7-b29f-f2950aa8fdea" />
 
