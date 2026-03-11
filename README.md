@@ -23,8 +23,31 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      > *Towler model*: Gavin Towler (2007), “Chemical Engineering Design –Principles, Practice and Economics of plant” (1st ed.)  
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
 
-   - Function Interface  
-  
+   - Function Interface
+     Main features:
+     ```
+     eqpcomo(model="model name", equipment="equipment name", eqptype="equipment type name", par_1=par_1_value, par_2=par_2_value,...)
+     ```
+       
+     Table of parameters to `eqpcomo` function:
+       
+     | Parameter     | Description                                                                        |
+     | ------------- | ---------------------------------------------------------------------------------- |
+     | model         | Cost estimation model (`Turton`, `Seider`, `Smith`, `Towler`, `Peters`, `Guthrie`) |
+     | equipment     | Equipment category                                                                 |
+     | eqptype       | Equipment subtype                                                                  |
+     | material      | Construction material                                                              |
+     | T_K           | Operating temperature (K)                                                          |
+     | P_bar         | Operating pressure (bar)                                                           |
+     | vol_cum       | Volume (m³)                                                                        |
+     | area_sqm      | Heat transfer area (m²)                                                            |
+     | power_kW      | Equipment power (kW)                                                               |
+     | massflow_kgph | Mass flow rate (kg/h)                                                              |
+     | volflow_cumph | Volumetric flow rate (m³/h)                                                        |
+     | diameter_m    | Diameter (m)                                                                       |
+     | height_m      | Height (m)                                                                         |
+     | thickness_m   | Wall thickness (m)                                                                 |
+       
      
    - Input Validation and Error Messages  
      The required parameters for function can be differ depending on selected cost estimation model or equipment type.     
