@@ -5,7 +5,7 @@
 <img width="4816" height="1256" alt="Frame 21 (1)" src="https://github.com/user-attachments/assets/49512815-1450-48d7-b29f-f2950aa8fdea" />
 
 **ECO-ANA**(Process **Eco**nomic-**Ana**lyzer) is designed to support early-stage techno-economic analysis (TEA) of chemical processes accounting for cost estimation model uncertainty.  
-This was developed by **LSPE**, the Laboratory for Sustainable Process Engineering from Chungnam national university.  
+This was developed by **LSPE**, the *Laboratory for Sustainable Process Engineering* from Chungnam national university.  
 LSPE@CNU: https://sites.google.com/view/rohgroup
 
 **MODULES**
@@ -13,7 +13,8 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
 1. `ecoana.eqpcomo`  
      `eqpcomo` is a Python module for chemical process equipment cost estimation.
      This module provides a unified interface to estimate equipment purchase costs using several well-known correlations from chemical engineering literature.
-     Each model contains equipment-specific correlations, capacity ranges, and material factors based on the original literature sources.  
+     Each model contains equipment-specific correlations, capacity ranges, and material factors based on the original literature sources.
+     And each model has its own valid equipment types and parameter requirements.
        
      The library currently implements models from:  
      > *Turton model*: Richard A. Turton (2018), “Analysis, Synthesis, and Design of Chemical processes” (5th ed.)  
