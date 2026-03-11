@@ -17,8 +17,8 @@ pip install eco-ana
 
 **MODULES**
 ---
-1. `ecoana.eqpcomo`  
-     `eqpcomo` is a Python module for chemical process equipment cost estimation.
+1. `ecoana.eqpcomo()`  
+     `eqpcomo()` is a Python module for chemical process equipment cost estimation.
      This module provides a unified interface to estimate equipment purchase costs using several well-known correlations from chemical engineering literature.
      Each model contains equipment-specific correlations, capacity ranges, and material factors based on the original literature sources.  
        
@@ -37,7 +37,7 @@ pip install eco-ana
      eqpcomo(model="model name", equipment="equipment name", eqptype="equipment type name", par_1=par_1_value, par_2=par_2_value,...)
      ```
      <br />
-     Table of parameters to `eqpcomo` function:   <br />
+     Table of parameters to `eqpcomo()` function:   <br />
 
      | Parameter     | Description                                                                        |
      | ------------- | ---------------------------------------------------------------------------------- |
@@ -73,7 +73,7 @@ pip install eco-ana
      )
      print(cost)
      ```
-     Output: The `eqpcomo` returns a tuple containing two values.
+     Output: The `eqpcomo()` returns a tuple containing two values.
      ```
      (212390.5, '2000 year basis')
      ```
@@ -83,7 +83,7 @@ pip install eco-ana
    
  - Error Messages   <br />
      The required parameters for function can be differ depending on selected cost estimation model or equipment type.   <br />    
-     Therefore, the `eqpcomo` includes built-in input validation and guidance through error messages.  <br />
+     Therefore, the `eqpcomo()` includes built-in input validation and guidance through error messages.  <br />
        <br /> 
      If required parameters are missing or invalid, the function returns a error message indicating:  <br />
      - which input parameter is missing  
@@ -91,23 +91,23 @@ pip install eco-ana
      - the list of available options for the given model
       <br />
      Example 1: <br />
-     If the essential parameters required for cost estimation is not input into the function,   <br />
+     If the essential parameters required for cost estimation is not input into the function,
+     
      ```
      eqpcomo(model="Turton", equipment="Vaporizer")
      ```  
      ```
      Error: Missing required input variables for the selected model and equipment. Missing variables: ['eqptype', 'vol_cum', 'P_bar', 'material']
      ```  
-     <br />
      Example 2:   <br />
-     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user. <br />
+     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user. 
      ```
      eqpcomo(model="Turton", equipment="Membrane")
      ```  
      ```
      Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
-     ```  
-      
+     ```
+     
      - Automatic Parameter Estimation
        Some parameters can be automatically estimated if not provided. These helper functions are implemented in the internal utility modules.
 
