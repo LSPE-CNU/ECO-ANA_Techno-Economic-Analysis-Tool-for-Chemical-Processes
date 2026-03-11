@@ -99,9 +99,11 @@ pip install eco-ana
      ```
      Error: Missing required input variables for the selected model and equipment. Missing variables: ['eqptype', 'vol_cum', 'P_bar', 'material']
      ```
+     
      <br />
      Example 2:   <br />
-     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user. 
+     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user.
+   
      ```
      eqpcomo(model="Turton", equipment="Membrane")
      ```  
