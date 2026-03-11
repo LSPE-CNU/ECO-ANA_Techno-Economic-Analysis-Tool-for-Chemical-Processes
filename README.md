@@ -8,6 +8,13 @@
 This was developed by **LSPE**, the *Laboratory for Sustainable Process Engineering* from Chungnam national university.  
 LSPE@CNU: https://sites.google.com/view/rohgroup
 
+**INSTALLATION**
+---
+Install the package from PyPI:
+```
+pip install eco-ana
+```
+
 **MODULES**
 ---
 1. `ecoana.eqpcomo`  
@@ -30,16 +37,16 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      eqpcomo(model="model name", equipment="equipment name", eqptype="equipment type name", par_1=par_1_value, par_2=par_2_value,...)
      ```
      <br />
-     Table of parameters to `eqpcomo` function:  
-       
+     Table of parameters to `eqpcomo` function:   <br />
+         <br />
      | Parameter     | Description                                                                        |
      | ------------- | ---------------------------------------------------------------------------------- |
      | model         | Cost estimation model (`Turton`, `Seider`, `Smith`, `Towler`, `Peters`, `Guthrie`) |
-     | equipment     | Equipment category                                                                 |
-     | eqptype       | Equipment subtype                                                                  |
+     | equipment     | Equipment name                                                                     |
+     | eqptype       | Equipment type                                                                     |
      | material      | Construction material                                                              |
-     | T_K           | Operating temperature (K)                                                          |
-     | P_bar         | Operating pressure (bar)                                                           |
+     | T_K           | Design temperature (K)                                                             |
+     | P_bar         | Design pressure (bar)                                                              |
      | vol_cum       | Volume (m³)                                                                        |
      | area_sqm      | Heat transfer area (m²)                                                            |
      | power_kW      | Equipment power (kW)                                                               |
@@ -49,46 +56,11 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      | height_m      | Height (m)                                                                         |
      | thickness_m   | Wall thickness (m)                                                                 |
         <br />
-     
-   - Input Validation and Error Messages  
-     The required parameters for function can be differ depending on selected cost estimation model or equipment type.     
-     Therefore, the `eqpcomo` includes built-in input validation and guidance through error messages.
-       
-     If required parameters are missing or invalid, the function returns a error message indicating:
-     - which input parameter is missing  
-     - whether the selected model or equipment type is unsupported  
-     - the list of available options for the given model
-     
-     Example 1:
-     If the essential parameters required for cost estimation is not input into the function,  
-     ```
-     eqpcomo(model="Turton", equipment="Vaporizer")
-     ```  
-     ```
-     Error: Missing required input variables for the selected model and equipment. Missing variables: ['eqptype', 'vol_cum', 'P_bar', 'material']
-     ```  
-    
-     Example 2:  
-     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user.
-     ```
-     eqpcomo(model="Turton", equipment="Membrane")
-     ```  
-     ```
-     Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
-     ```  
-     
-  
-     
-
-     
-     Main function:
-     The required parameters depend on the selected model and equipment type.
-     
-     
-   - Basic Usage  
+        
+ - Basic Usage
      Example: estimating the cost of a centrifugal compressor using the Smith model
      ```
-     from eqpcomo import eqpcomo
+     from ecoana import eqpcomo
      
      cost = eqpcomo(
           model="Smith",
@@ -99,9 +71,43 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
           material='Carbon steel',
           power_kW=1000
      )
-     
      print(cost)
+     ```
+     Output: The `eqpcomo` returns a tuple containing two values:
+     ```
+     (212390.5, '2000 year basis')
+     ```
+     Each equipment cost estimation models are based on correlations derived from price data for different years.  <br />
+   Therefore, the function returns the basis year together with the cost estimate so that users can adjust the cost using an appropriate **Capital Cost Index (e.g., CEPCI)** if needed.  <br />
+       <br />
+   - Error Messages   <br />
+     The required parameters for function can be differ depending on selected cost estimation model or equipment type.   <br />    
+     Therefore, the `eqpcomo` includes built-in input validation and guidance through error messages.  <br />
+       <br /> 
+     If required parameters are missing or invalid, the function returns a error message indicating:  <br />
+     - which input parameter is missing  
+     - whether the selected model or equipment type is unsupported  
+     - the list of available options for the given model
+      <br />
+     Example 1:
+     If the essential parameters required for cost estimation is not input into the function,  
+     ```
+     eqpcomo(model="Turton", equipment="Vaporizer")
      ```  
+     ```
+     Error: Missing required input variables for the selected model and equipment. Missing variables: ['eqptype', 'vol_cum', 'P_bar', 'material']
+     ```  
+     <br />
+     Example 2:  
+     If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user.
+     ```
+     eqpcomo(model="Turton", equipment="Membrane")
+     ```  
+     ```
+     Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
+     ```  
+      <br />
+  
      - Automatic Parameter Estimation
        Some parameters can be automatically estimated if not provided. These helper functions are implemented in the internal utility modules.
 
