@@ -99,7 +99,7 @@ pip install eco-ana
      ```
      Error: Missing required input variables for the selected model and equipment. Missing variables: ['eqptype', 'vol_cum', 'P_bar', 'material']
      ```
-      <br />
+     <br />
      Example 2:   <br />
      If the model does not support the equipment cost estimation formula for the equipment specifiaction (e.g., material, equipment, eqptype) input by the user. 
      ```
@@ -108,13 +108,7 @@ pip install eco-ana
      ```
      Error: The selected equipment 'Membrane' is not available in the equipment cost estimation model. Available equipment options: ['Blender', 'Centrifuge', 'Compressor', 'Conveyor', 'Crystallizer-batch evaporative', 'Dryer', 'Dust collector', 'Evaporator', 'Fans', 'Furnace', 'Filters', 'Mixer', 'Heater', 'Packing', 'Vessel/Tower', 'Pumps', 'Reactor', 'Storage tank', 'Screens', 'Trays', 'Turbines', 'Vaporizer', 'Heat exchanger (shell and tube)', 'Heat exchanger (others)']
      ```
-     <br />
-   - Automatic Parameter Estimation
-     Some parameters can be automatically estimated if not provided. These helper functions are implemented in the internal utility modules.
-
-         - Vessel volume estimation from diameter and height
-         - Vessel wall thickness estimation from pressure and temperature
-         - Pump head estimation
+<br />
        
 
 **AUTHOR**
