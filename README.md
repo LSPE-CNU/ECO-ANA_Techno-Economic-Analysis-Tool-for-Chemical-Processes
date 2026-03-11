@@ -22,14 +22,16 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
      > *Peters model*: Max. S. Peters (2003), “Plant Design and Economics for Chemical Engineers” (5th ed.)  
      > *Towler model*: Gavin Towler (2007), “Chemical Engineering Design –Principles, Practice and Economics of plant” (1st ed.)  
      > *Guthrie model*: L. T. Biegler (1997) "Systematic Methods of Chemical Process Design" (1st ed.)
-
-   - Function Interface
+ <br />
+  <br />
+  
+   - Function Interface  
      Main features:
      ```
      eqpcomo(model="model name", equipment="equipment name", eqptype="equipment type name", par_1=par_1_value, par_2=par_2_value,...)
      ```
-       
-     Table of parameters to `eqpcomo` function:
+     <br />
+     Table of parameters to `eqpcomo` function:  
        
      | Parameter     | Description                                                                        |
      | ------------- | ---------------------------------------------------------------------------------- |
