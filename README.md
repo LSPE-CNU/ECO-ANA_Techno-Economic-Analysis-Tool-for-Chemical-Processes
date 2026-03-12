@@ -12,7 +12,7 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
 ---
 Install the package from PyPI:
 ```
-pip install eco-ana
+pip install ecoana
 ```
 
 **MODULES**
