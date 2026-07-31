@@ -122,6 +122,158 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
 
 <br />
 
+2. `ecoana.capcomo()`  
+     `capcomo()` is a Python module for project-level (plant-wide) capital cost estimation.
+     Rather than summing up individual equipment costs, it provides capacity-based ("economy-of-scale") correlations that estimate an overall capital cost figure directly from the plant/process production capacity, so it is useful for very early (order-of-magnitude) cost screening before a full equipment list is available.
+     Each model returns a capital cost defined at a specific project stage (e.g., installed equipment cost, inside battery limits, fixed capital investment, or total capital investment) — see the table below for the cost type and basis year returned by each model.  
+       
+     The library currently implements the following capacity-based capital cost estimation models:  
+     > *Hill* (1956) — Installed total equipment cost, from number of processing units and plant capacity.  
+     > *Guthrie* (conceptual estimate, 1970) — Fixed capital investment, from process-specific cost/capacity/scaling data for 18 predefined bulk chemical processes.  
+     > *Timms* (1980) — Total capital investment, from number of units, capacity, and design temperature/pressure.  
+     > *Garrett* (1989) — Inside battery limits, from process-specific correlations for a large set of predefined petrochemical processes.  
+     > *Petley* (1997) — Inside battery limits, from number of units, capacity, and design temperature/pressure.  
+     > *Lange 1 / Lange 2* (2001) — Total capital investment, from process energy-loss / energy-transfer duty (for utility-type processes such as refrigeration or heat recovery).  
+     >
+     > *Please add the full literature reference for each of the above models here, in the same citation style as the `eqpcomo()` models above.*
+ <br />
+
+   - Function Interface    <br />
+     Main features:
+     ```
+     capcomo(model="model name", process="process name", scale_tpy=scale_tpy_value, unit_num=unit_num_value, Tmax_K=Tmax_K_value, Pmax_bar=Pmax_bar_value, energytransfer_MW=energytransfer_MW_value, energyloss_MW=energyloss_MW_value)
+     ```
+     <br />
+     Table of parameters to `capcomo()` function:
+
+     | Parameter          | Description                                       | Required by                                   |
+     | ------------------ | -------------------------------------------------- | ---------------------------------------------- |
+     | model               | Capital cost estimation model (`Hill`, `Guthrie`, `Timms`, `Garrett`, `Petley`, `Lange 1`, `Lange 2`) | all |
+     | process             | Predefined process/product name (see source code for the full list) | `Guthrie`, `Garrett` |
+     | scale_tpy           | Plant/production capacity (ton/year)               | `Hill`, `Guthrie`, `Timms`, `Garrett`, `Petley` |
+     | unit_num            | Number of parallel processing units/trains         | `Hill`, `Timms`, `Petley`                      |
+     | Tmax_K              | Maximum design temperature (K)                     | `Timms`, `Petley`                              |
+     | Pmax_bar            | Maximum design pressure (bar)                      | `Timms`, `Petley`                              |
+     | energyloss_MW       | Energy loss duty (MW)                              | `Lange 1`                                      |
+     | energytransfer_MW   | Energy transfer duty (MW)                          | `Lange 2`                                      |
+        <br />
+     For the `Guthrie` model, `process` must be one of the following 18 predefined bulk chemicals: `Acetic acid`, `Acetone`, `Ammonia`, `Ammonium nitrate`, `Butanol`, `Chlorine`, `Ethylene`, `Ethylene oxide`, `Formaldehyde`, `Glycol`, `Hydrofluoric acid`, `Methanol`, `Nitric acid`, `Phosphoric acid`, `Polyethylene`, `Propylene`, `Sulfuric acid`, `Urea`.
+        <br />
+
+ - Basic Usage <br />
+     Example: Estimating the fixed capital investment of a methanol plant using the Guthrie model.
+     ```
+     from ecoana import capcomo
+     
+     cost = capcomo(
+          model="Guthrie",
+          process="Methanol",
+          scale_tpy=500000
+     )
+     print(cost)
+     ```
+     Output: The `capcomo()` returns a tuple containing three values — the estimated cost, the cost basis year, and the capital cost type that the selected model estimates.
+     ```
+     (56396953.9, '2000 year basis', 'Fixed capital investment')
+     ```
+     As with `eqpcomo()`, users should adjust the returned cost to the desired basis year using an appropriate **Capital Cost Index (e.g., CEPCI)** if needed.  <br />
+   <br />
+   
+ - Error Messages   <br />
+     Like `eqpcomo()`, `capcomo()` validates the required inputs for the selected model and returns a descriptive error message when required parameters are missing or an unsupported model/process is selected.  <br />
+       <br /> 
+     Example: <br />
+     If the essential parameters required for cost estimation are not passed to the function,
+     
+     ```
+     capcomo(model="Guthrie", process="Methanol")
+     ```  
+     ```
+     Error: The 'scale_tpy' must be defined for capital cost estimation (Guthrie model).
+     ```
+     <br />
+
+- Known limitation  <br />
+The `Garrett` model is included in the source code but is currently not functional (an internal issue in how the process lookup table is accessed causes it to fail); this is planned to be fixed in an upcoming release. All other models (`Hill`, `Guthrie`, `Timms`, `Petley`, `Lange 1`, `Lange 2`) have been verified to work as documented above.
+
+<br />
+
+3. `ecoana.capconv()`  
+     `capconv()` is a Python module that converts a known capital cost from one capital-cost category to another (for example, from purchased equipment cost to total capital investment), using a factor-based (Lang-factor style) method.
+     This is useful when a cost is known at one project stage but a different stage is needed for the techno-economic analysis.  
+       
+     The library currently implements the factor method of:  
+     > *Peters and Timmerhaus* — capital cost factors classified by process type (`Fluid`, `Solids-fluid`, `Solid`).  
+     >
+     > *Please add the full literature reference for this model here, in the same citation style as the `eqpcomo()` models above.*
+ <br />
+
+   - Function Interface    <br />
+     Main features:
+     ```
+     capconv(model="model name", phase_processing="process type", cap_in="known cost category", cap_out="target cost category", base_cost=base_cost_value, rate_WC=0.15)
+     ```
+     <br />
+     Table of parameters to `capconv()` function:
+
+     | Parameter          | Description                                                                                   |
+     | ------------------ | ----------------------------------------------------------------------------------------------- |
+     | model               | Capital cost conversion model (currently only `Peters and Timmerhaus`)                          |
+     | phase_processing    | Process type used by the `Peters and Timmerhaus` model (`Fluid`, `Solids-fluid`, `Solid`)        |
+     | cap_in              | Capital cost category of `base_cost` (see table below)                                          |
+     | cap_out             | Capital cost category to convert to (see table below)                                           |
+     | base_cost           | Known cost value, in the `cap_in` category                                                      |
+     | rate_WC             | Working capital as a fraction of fixed capital investment, used when converting to/from total capital investment (default: `0.15`) |
+        <br />
+     `cap_in` / `cap_out` accept the following capital cost categories. Using the short code (e.g., `tci`) is recommended for reliable matching:
+
+     | Capital cost category       | Short code | Also accepted                                                              |
+     | ---------------------------- | ---------- | --------------------------------------------------------------------------- |
+     | Equipment cost                | `tpec`     | `equipment cost`, `total equipment cost`, `total equipment purchase cost`, `equipment`, `total equipment` |
+     | Installed equipment cost      | `tiec`     | `installed equipment cost`, `total installed equipment cost`, `total installed equipment`, `installed equipment` |
+     | Inside battery limits          | `isbl`     | `inside battery limits`, `inside battery limits cost`                       |
+     | Fixed capital investment       | `fci`      | `fixed capital`, `fixed capital investment`, `fixed capital cost`           |
+     | Total capital investment       | `tci`      | `total capital`, `total capital cost`                                       |
+        <br />
+
+ - Basic Usage <br />
+     Example: Converting an equipment cost of $1,000,000 to total capital investment for a fluid-processing plant.
+     ```
+     from ecoana import capconv
+     
+     cost = capconv(
+          model="Peters and Timmerhaus",
+          phase_processing="Fluid",
+          cap_in="tpec",
+          cap_out="tci",
+          base_cost=1000000
+     )
+     print(cost)
+     ```
+     Output: The `capconv()` returns a single converted cost value (float), on the same basis/currency as `base_cost`.
+     ```
+     5554500.0
+     ```
+     <br />
+
+ - Error Messages   <br />
+     `capconv()` validates the required inputs and returns a descriptive error message when required parameters are missing or an unsupported model, phase, or cost category is selected.  <br />
+       <br /> 
+     Example: <br />
+     If the process type is not passed to the function,
+     
+     ```
+     capconv(model="Peters and Timmerhaus", cap_in="tpec", cap_out="tci", base_cost=1000000)
+     ```  
+     ```
+     Error: The 'phase_processing' must be defined for plant capital estimation (Peters and Timmerhaus model).
+     ```
+     <br />
+
+
+
+<br />
+
 **AUTHOR**
 ---
 Haeun Choi  
