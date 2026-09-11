@@ -202,19 +202,16 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
      ```
      <br />
 
-- Known limitation  <br />
-The `Garrett` model is included in the source code but is currently not functional (an internal issue in how the process lookup table is accessed causes it to fail); this is planned to be fixed in an upcoming release. All other models (`Hill`, `Guthrie`, `Timms`, `Petley`, `Lange 1`, `Lange 2`) have been verified to work as documented above.
-
 <br />
 
 3. `ecoana.capconv()`  
-     `capconv()` is a Python module that converts a known capital cost from one capital-cost category to another (for example, from purchased equipment cost to total capital investment), using a factor-based (Lang-factor style) method.
+     `capconv()` is a Python module that converts a known capital cost from one capital-cost category to another (for example, from purchased equipment cost to total capital investment), using a factor-based method.
      This is useful when a cost is known at one project stage but a different stage is needed for the techno-economic analysis.  
        
      The library currently implements the factor method of:  
-     > *Peters and Timmerhaus* — capital cost factors classified by process type (`Fluid`, `Solids-fluid`, `Solid`).  
+     > *Peters and Timmerhaus*: M. S. Peters, K. D. Timmerhaus (1968), "Plant Design and Economics for Chemical Engineers" (2nd ed.) 
      >
-     > *Please add the full literature reference for this model here, in the same citation style as the `eqpcomo()` models above.*
+    
  <br />
 
    - Function Interface    <br />
@@ -227,8 +224,8 @@ The `Garrett` model is included in the source code but is currently not function
 
      | Parameter          | Description                                                                                   |
      | ------------------ | ----------------------------------------------------------------------------------------------- |
-     | model               | Capital cost conversion model (currently only `Peters and Timmerhaus`)                          |
-     | phase_processing    | Process type used by the `Peters and Timmerhaus` model (`Fluid`, `Solids-fluid`, `Solid`)        |
+     | model               | Capital cost conversion model name (`Peters and Timmerhaus`)                          |
+     | phase_processing    | Processing material phase type (`Fluid`, `Solids-fluid`, `Solid`)        |
      | cap_in              | Capital cost category of `base_cost` (see table below)                                          |
      | cap_out             | Capital cost category to convert to (see table below)                                           |
      | base_cost           | Known cost value, in the `cap_in` category                                                      |
