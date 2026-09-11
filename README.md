@@ -127,7 +127,7 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
      Rather than summing up individual equipment costs, it provides capacity-based ("economy-of-scale") correlations that estimate an overall capital cost figure directly from the plant/process production capacity, so it is useful for very early (order-of-magnitude) cost screening before a full equipment list is available.
      Each model returns a integrated capital cost (e.g., installed equipment cost, inside battery limits, fixed capital investment, or total capital investment) — see the table below for the cost type and basis year returned by each model.
    | Model(Basis year) | Required inputs | Estimated capital cost type | 
-   | ----- | --------------- | --------------------------- | ------ |
+   | ----- | --------------- | --------------------------- | 
    | `Hill` (1956) | `scale_tpy`, `unit_num` | Installed equipment cost |
    | `Guthrie` (1970) | `process`, `scale_tpy` | Fixed capital investment (FCI) |
    | `Timms` (1980) | `scale_tpy`, `unit_num`, `Tmax_K`, `Pmax_bar` | Total capital investment (TCI) |
