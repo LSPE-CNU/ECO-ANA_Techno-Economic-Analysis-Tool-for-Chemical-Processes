@@ -136,14 +136,14 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
    | `Lange 1` (2001) | `energyloss_MW` | Total capital investment (TCI) | 
    | `Lange 2` (2001) | `energytransfer_MW` | Total capital investment (TCI) | 
        
-     The library currently implements plant-level capital cost estimation models from:  
-     > *Hill model*: R. Hill (1956), "What petrochemical plants cost", *Petroleum Refiner*, 35(8), 106–110
-     > *Guthrie model*: M. S. Peters, K. D. Timmerhaus, R. E. West (2003), "Plant Design and Economics for Chemical Engineers" (5th ed.)
-     > *Timms model*: S. R. Timms (1980), "Development of Rapid Capital Cost Estimation Techniques for the Chemical Processing Industries", PhD thesis, Aston University
-     > *Garrett model*: D. E. Garrett (1989), "Chemical Engineering Economics", Van Nostrand Reinhold
-     > *Petley model*: G. J. Petley (1997), "A Method for Estimating the Capital Cost of Chemical Process Plants: Fuzzy Matching", PhD thesis, Loughborough University
-     > *Lange 1 model*: J.-P. Lange (2001), "Fuels and chemicals manufacturing; guidelines for understanding and minimizing the production costs", *CatTech*, 5(2), 82–95
-     > *Lange 2 model*: J.-P. Lange (2001), "Fuels and chemicals manufacturing; guidelines for understanding and minimizing the production costs", *CatTech*, 5(2), 82–95
+     The library currently implements plant-level capital cost estimation models from:  <br />
+     > *Hill model*: R. Hill (1956), "What petrochemical plants cost", *Petroleum Refiner*, 35(8), 106–110<br />
+     > *Guthrie model*: M. S. Peters, K. D. Timmerhaus, R. E. West (2003), "Plant Design and Economics for Chemical Engineers" (5th ed.)<br />
+     > *Timms model*: S. R. Timms (1980), "Development of Rapid Capital Cost Estimation Techniques for the Chemical Processing Industries", PhD thesis, Aston University<br />
+     > *Garrett model*: D. E. Garrett (1989), "Chemical Engineering Economics", Van Nostrand Reinhold<br />
+     > *Petley model*: G. J. Petley (1997), "A Method for Estimating the Capital Cost of Chemical Process Plants: Fuzzy Matching", PhD thesis, Loughborough University<br />
+     > *Lange 1 model*: J.-P. Lange (2001), "Fuels and chemicals manufacturing; guidelines for understanding and minimizing the production costs", *CatTech*, 5(2), 82–95<br />
+     > *Lange 2 model*: J.-P. Lange (2001), "Fuels and chemicals manufacturing; guidelines for understanding and minimizing the production costs", *CatTech*, 5(2), 82–95<br />
  <br />
  <br />
 
@@ -209,7 +209,7 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
      This is useful when a cost is known at one project stage but a different stage is needed for the techno-economic analysis.  
        
      The library currently implements the factor method of:  
-     > *Peters and Timmerhaus*: M. S. Peters, K. D. Timmerhaus (1968), "Plant Design and Economics for Chemical Engineers" (2nd ed.) 
+     > *Peters and Timmerhaus*: M. S. Peters, K. D. Timmerhaus (1968), "Plant Design and Economics for Chemical Engineers" (2nd ed.) <br />
      >
     
  <br />
@@ -282,8 +282,11 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
 
 **AUTHOR**
 ---
-Haeun Choi  
+Developer: Haeun Choi  
 E-mail: nolaaa@o.cnu.ac.kr
+
+Corresponding: Kosan Roh <br />
+E-mail: ksroh@cnu.ac.kr <br />
 
 **ACKNOWLEDGEMENT**
 ---
