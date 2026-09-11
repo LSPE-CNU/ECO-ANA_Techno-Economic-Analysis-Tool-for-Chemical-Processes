@@ -123,19 +123,28 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
 <br />
 
 2. `ecoana.capcomo()`  
-     `capcomo()` is a Python module for project-level (plant-wide) capital cost estimation.
+     `capcomo()` is a Python module for plant-level capital cost estimation.
      Rather than summing up individual equipment costs, it provides capacity-based ("economy-of-scale") correlations that estimate an overall capital cost figure directly from the plant/process production capacity, so it is useful for very early (order-of-magnitude) cost screening before a full equipment list is available.
-     Each model returns a capital cost defined at a specific project stage (e.g., installed equipment cost, inside battery limits, fixed capital investment, or total capital investment) — see the table below for the cost type and basis year returned by each model.  
+     Each model returns a integrated capital cost (e.g., installed equipment cost, inside battery limits, fixed capital investment, or total capital investment) — see the table below for the cost type and basis year returned by each model.
+   | Model(Basis year) | Required inputs | Estimated capital cost type | 
+   | ----- | --------------- | --------------------------- | ------ |
+   | `Hill` (1956) | `scale_tpy`, `unit_num` | Installed equipment cost |
+   | `Guthrie` (1970) | `process`, `scale_tpy` | Fixed capital investment (FCI) |
+   | `Timms` (1980) | `scale_tpy`, `unit_num`, `Tmax_K`, `Pmax_bar` | Total capital investment (TCI) |
+   | `Garrett` (1989) | `process`, `scale_tpy` | Inside battery limits (ISBL) |
+   | `Petley` (1997) | `scale_tpy`, `unit_num`, `Tmax_K`, `Pmax_bar` | Inside battery limits (ISBL) |
+   | `Lange 1` (2001) | `energyloss_MW` | Total capital investment (TCI) | 
+   | `Lange 2` (2001) | `energytransfer_MW` | Total capital investment (TCI) | 
        
-     The library currently implements the following capacity-based capital cost estimation models:  
-     > *Hill* (1956) — Installed total equipment cost, from number of processing units and plant capacity.  
-     > *Guthrie* (conceptual estimate, 1970) — Fixed capital investment, from process-specific cost/capacity/scaling data for 18 predefined bulk chemical processes.  
-     > *Timms* (1980) — Total capital investment, from number of units, capacity, and design temperature/pressure.  
-     > *Garrett* (1989) — Inside battery limits, from process-specific correlations for a large set of predefined petrochemical processes.  
-     > *Petley* (1997) — Inside battery limits, from number of units, capacity, and design temperature/pressure.  
-     > *Lange 1 / Lange 2* (2001) — Total capital investment, from process energy-loss / energy-transfer duty (for utility-type processes such as refrigeration or heat recovery).  
-     >
-     > *Please add the full literature reference for each of the above models here, in the same citation style as the `eqpcomo()` models above.*
+     The library currently implements plant-level capital cost estimation models from:  
+     > *Hill model*: R. Hill (1956), "What petrochemical plants cost", *Petroleum Refiner*, 35(8), 106–110
+     > *Guthrie model*: M. S. Peters, K. D. Timmerhaus, R. E. West (2003), "Plant Design and Economics for Chemical Engineers" (5th ed.)
+     > *Timms model*: S. R. Timms (1980), "Development of Rapid Capital Cost Estimation Techniques for the Chemical Processing Industries", PhD thesis, Aston University
+     > *Garrett model*: D. E. Garrett (1989), "Chemical Engineering Economics", Van Nostrand Reinhold
+     > *Petley model*: G. J. Petley (1997), "A Method for Estimating the Capital Cost of Chemical Process Plants: Fuzzy Matching", PhD thesis, Loughborough University
+     > *Lange 1 model*: J.-P. Lange (2001), "Fuels and chemicals manufacturing; guidelines for understanding and minimizing the production costs", *CatTech*, 5(2), 82–95
+     > *Lange 2 model*: J.-P. Lange (2001), "Fuels and chemicals manufacturing; guidelines for understanding and minimizing the production costs", *CatTech*, 5(2), 82–95
+ <br />
  <br />
 
    - Function Interface    <br />
