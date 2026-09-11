@@ -10,10 +10,7 @@ LSPE@CNU: https://sites.google.com/view/rohgroup
 
 **INSTALLATION**
 ---
-Install the package from PyPI:
-```
-pip install ecoana
-```
+
 
 **MODULES**
 ---
