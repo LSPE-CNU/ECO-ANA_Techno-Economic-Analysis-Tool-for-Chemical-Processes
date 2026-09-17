@@ -206,7 +206,8 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
        
      The library currently implements the factor method of:  
      > *Peters and Timmerhaus*: M. S. Peters, K. D. Timmerhaus (1968), "Plant Design and Economics for Chemical Engineers" (2nd ed.) <br />
-     >
+     > *Smith*: Smith, R.(2005), "Chemical process: design and integration", John Wiley & Sons. <br />
+     > *Lang*: Lang, H.J.(1947), "Cost relationships in preliminary cost estimation". Chem. Eng., 54(10): p. 117–121. <br />
     
  <br />
 
@@ -220,7 +221,7 @@ The `eqpcomo()` can automatically estimate some parameters when they are not exp
 
      | Parameter          | Description                                                                                   |
      | ------------------ | ----------------------------------------------------------------------------------------------- |
-     | model               | Capital cost conversion model name (`Peters and Timmerhaus`)                          |
+     | model               | Capital cost conversion model name (`Peters and Timmerhaus`,`Smith`,`Lang`)                          |
      | phase_processing    | Processing material phase type (`Fluid`, `Solids-fluid`, `Solid`)        |
      | cap_in              | Capital cost category of `base_cost` (see table below)                                          |
      | cap_out             | Capital cost category to convert to (see table below)                                           |
