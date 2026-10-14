@@ -9,6 +9,20 @@ This was developed by **LSPE**, the *Laboratory for Sustainable Process Engineer
 LSPE@CNU: https://sites.google.com/view/rohgroup
 
 
+**GENERAL INFORMATION**
+---
+Each equipment cost correlation in ECO-ANA is valid only within the capacity range reported in its original publication.
+
+When the required equipment capacity exceeds the upper limit of a correlation, ECO-ANA does not extrapolate the correlation. Instead, it:
+
+1. divides the equipment into *n* identical parallel units, each with a capacity within the valid range;
+2. calculates the purchased cost of one unit with the correlation; and
+3. reports the total purchased cost of all *n* units.
+
+A warning is shown whenever this treatment is applied. The warning reports the equipment item, the correlation used, and the number of parallel units.
+
+Example:
+> UserWarning: Capacity of 'E-101' exceeds the upper limit of the Turton correlation. The equipment is represented as 3 identical parallel units.
 
 
 **MODULES**
