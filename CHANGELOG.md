@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.0] – unreleased
+## [1.0.0] – 2026-11-04
 
 ### Packaging and installation
 - Repository restructured into a standard Python package layout: the package code is in the
