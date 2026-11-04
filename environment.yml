@@ -1,0 +1,12 @@
+# Conda environment for ECO-ANA
+#   conda env create -f environment.yml
+#   conda activate ecoana
+name: ecoana
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy>=1.21
+  - pip
+  - pip:
+      - -e .

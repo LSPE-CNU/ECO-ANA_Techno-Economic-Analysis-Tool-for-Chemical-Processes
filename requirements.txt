@@ -1,0 +1,3 @@
+# ECO-ANA runtime dependencies
+# Supported Python versions: 3.9 - 3.13 (Windows, macOS, Linux)
+numpy>=1.21

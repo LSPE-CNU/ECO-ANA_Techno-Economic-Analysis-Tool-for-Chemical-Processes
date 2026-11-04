@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecoana"
+version = "1.0.0"
+description = "ECO-ANA (Process ECOnomic ANAlyzer): multi-model capital cost estimation for early-stage techno-economic analysis of chemical processes"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE.txt"]
+authors = [
+    { name = "Haeun Choi", email = "nolaaa@o.cnu.ac.kr" },
+    { name = "Kosan Roh", email = "ksroh@cnu.ac.kr" },
+]
+maintainers = [
+    { name = "Haeun Choi", email = "nolaaa@o.cnu.ac.kr" },
+]
+dependencies = [
+    "numpy>=1.21",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/LSPE-CNU/ECO-ANA_Techno-Economic-Analysis-Tool-for-Chemical-Processes"
+Repository = "https://github.com/LSPE-CNU/ECO-ANA_Techno-Economic-Analysis-Tool-for-Chemical-Processes"
+Documentation = "https://github.com/LSPE-CNU/ECO-ANA_Techno-Economic-Analysis-Tool-for-Chemical-Processes#readme"
+Issues = "https://github.com/LSPE-CNU/ECO-ANA_Techno-Economic-Analysis-Tool-for-Chemical-Processes/issues"
+
+[tool.setuptools]
+packages = ["ecoana"]
